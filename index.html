@@ -66,7 +66,7 @@ body {
 .socials-column a { color: #d6d6d6; text-decoration: none; font-size: 9px; }
 .socials-column a:hover { text-decoration: underline; }
 
-/* Center typing */
+/* Center column */
 .main-column { flex: 1; max-width: 600px; }
 .title { font-size: 14px; margin-bottom: 14px; }
 
@@ -88,6 +88,8 @@ body {
 </style>
 </head>
 
+<body>
+
 <div id="intro-screen">
   <div class="terminal">
     AR/CH/IVE_3000 // MAINFRAME ONLINE  
@@ -100,8 +102,6 @@ body {
   <button id="enter-btn">CLICK TO ENTER PUBLIC LIBRARY</button>
 </div>
 
-
-<!-- MAIN SITE -->
 <div id="site-content">
 <div class="content">
 
@@ -120,7 +120,7 @@ body {
     </ul>
   </div>
 
-  <!-- MAIN TEXT (typing) -->
+  <!-- MAIN COLUMN -->
   <div class="main-column">
     <h1 class="title">Grace O’Hanlon Public Library</h1>
     <p id="typed-text"></p>
@@ -141,58 +141,23 @@ body {
 
     <h3>Internships</h3>
 
-<a href="https:shopattersee.com" target="_blank">
-  <img src="Attersee.jpg" class="project-image">
-  <p>Fall 2025 — Creative Operations Intern, Attersee</p>
-</a>
+    <a href="https://shopattersee.com" target="_blank">
+      <img src="Attersee.jpg" class="project-image">
+      <p>Fall 2025 — Creative Operations Intern, Attersee</p>
+    </a>
 
-<a href="https://cinqasept.nyc/" target="_blank">
-  <img src="cinqasept.jpg" class="project-image">
-  <p>Summer 2025 — Public Relations Intern, Cinq à Sept</p>
-</a>
+    <a href="https://cinqasept.nyc/" target="_blank">
+      <img src="cinqasept.jpg" class="project-image">
+      <p>Summer 2025 — Public Relations Intern, Cinq à Sept</p>
+    </a>
 
-
+  </div>
 </div>
 </div>
 
 <script>
 // FULL ABOUT TEXT
-const text = `Grace O’Hanlon is a poet, musician, artist, journalist, and extreme sports enthusiast from Boston, Massachusetts. Drawing inspiration from the natural world, her work weaves together themes of philosophical absurdism, climate activism, and the intersections of memory and resilience. She is currently pursuing a BA in Fashion Business Management with a minor in English at the Fashion Institute of Technology in New York City and spent a year of her studies at the Polimoda Institute in Florence, Italy.
-
-Her ongoing projects reflect her multidisciplinary approach. Daughter of an Undertaker is a poetry and photography collection, which navigates grief and childhood through surrealism. Grace is simultaneously developing a research thesis rooted in her family’s history in Vieques, Puerto Rico, examining climate displacement and infrastructural vulnerability in the wake of Hurricane Maria.
-
-Education
-BA: Fashion Institute of Technology, Major: Fashion Business Management; Concentration: Sustainable Materials, Minor: English, Writing
-
-Past Work
-Her past written work is featured in Gandy Dancer Literary Magazine (Porch Friendship), Clutch Magazine (A Letter to my Sister), W27 newspaper, PrimmaDonna Zine, and Blush Magazine (Power of Spoken Word) where she recently accepted a position as Senior Culture Editor.
-
-In the summer of 2023, Grace interned in London at Waterstones, a book and publishing company, where she worked in event management and global marketing. She assisted in organizing the Edinburgh Literary Festival, and the release of Into the Void: From Birth to Black Sabbath—And Beyond by Geezer Butler and Restaurant: A Story of Excellence by Gordon Ramsay.
-
-In her musical career, Grace attended Sharon Music Academy for six years and performed at Carnegie Hall three times, representing the United States of America at the Crescendo International Piano Competition, earning second place in 2021 and first place in both 2022 and 2023. She is currently learning the organ as a fifth instrument in her repertoire consisting also of piano, guitar, drums, and synthesizer. She has a strong interest in the intersection between electronic music and orchestral compositions.
-
-Her interest in sustainable innovation has also shaped her biodesign practice. In 2023, her project Mystical Mycelium, a fully biodegradable mycelium-based toy prototype challenging the plastic toy industry, was exhibited at both the Museum of Modern Art and Parsons School of Design at the New York Biodesign Summit. Grace is a member of the Sustainability Council at FIT and participates in event organization and media alerts.
-
-Grace has an obsession with the extreme sports industry. She is a marathon runner, snowboarder, surfer, cyclist, hiker and climber. She has a lifelong goal of summiting Jebel Toubkal in Morocco and visiting Nepal in the future. In her free time she eats burritos and curates monthly Spotify playlists.`;
-
-// Typing Animation
-function startTyping() {
-  let i = 0;
-  const speed = 22;
-  const output = document.getElementById("typed-text");
-  const cursor = document.getElementById("cursor");
-
-  function type() {
-    if (i < text.length) {
-      output.textContent += text.charAt(i);
-      i++;
-      setTimeout(type, speed);
-    } else {
-      cursor.style.display = "none";
-    }
-  }
-  type();
-}
+const text = `Grace O’Hanlon is a poet, musician, artist, journalist, and extreme sports enthusiast from Boston, Massachusetts. Drawing inspiration from the natural world, her work weaves together themes of philosophical absurdism, climate activism, and the intersections of memory and resilience. She is currently pursuing a BA in Fashion Business Management with a minor in English at the Fashion Institute of Technology in New York City and spent a year of her studies at the Polimoda Institute in Florence, Italy. Her ongoing projects reflect her multidisciplinary approach. Daughter of an Undertaker is a poetry and photography collection, which navigates grief and childhood through surrealism. Grace is simultaneously developing a research thesis rooted in her family’s history in Vieques, Puerto Rico, examining climate displacement and infrastructural vulnerability in the wake of Hurricane Maria. Education BA: Fashion Institute of Technology, Major: Fashion Business Management; Concentration: Sustainable Materials, Minor: English, Writing Past Work Her past written work is featured in Gandy Dancer Literary Magazine (Porch Friendship), Clutch Magazine (A Letter to my Sister), W27 newspaper, PrimmaDonna Zine, and Blush Magazine (Power of Spoken Word) where she recently accepted a position as Senior Culture Editor. In the summer of 2023, Grace interned in London at Waterstones, a book and publishing company, where she worked in event management and global marketing. She assisted in organizing the Edinburgh Literary Festival, and the release of Into the Void: From Birth to Black Sabbath—And Beyond by Geezer Butler and Restaurant: A Story of Excellence by Gordon Ramsay. In her musical career, Grace attended Sharon Music Academy for six years and performed at Carnegie Hall three times, representing the United States of America at the Crescendo International Piano Competition, earning second place in 2021 and first place in both 2022 and 2023. She is currently learning the organ as a fifth instrument in her repertoire consisting also of piano, guitar, drums, and synthesizer. She has a strong interest in the intersection between electronic music and orchestral compositions. Her interest in sustainable innovation has also shaped her biodesign practice. In 2023, her project Mystical Mycelium, a fully biodegradable mycelium-based toy prototype challenging the plastic toy industry, was exhibited at both the Museum of Modern Art and Parsons School of Design at the New York Biodesign Summit. Grace is a member of the Sustainability Council at FIT and participates in event organization and media alerts. Grace has an obsession with the extreme sports industry. She is a marathon runner, snowboarder, surfer, cyclist, hiker and climber. She has a lifelong goal of summiting Jebel Toubkal in Morocco and visiting Nepal in the future. In her free time she eats burritos and curates monthly Spotify playlists.`;
 
 // Check if intro skip param is present
 const params = new URLSearchParams(window.location.search);
@@ -202,17 +167,15 @@ if (params.get("skipintro") === "true") {
 
   // Show full text instantly (no typing)
   document.getElementById("typed-text").textContent = text;
-  document.getElementById("cursor").style.display = "none";
 } else {
   // Normal behavior with intro + typing
   document.getElementById("enter-btn").addEventListener("click", () => {
     document.getElementById("intro-screen").style.display = "none";
     document.getElementById("site-content").style.display = "block";
-    startTyping();
+    document.getElementById("typed-text").textContent = text; // Show instantly
   });
 }
 </script>
-
 
 </body>
 </html>
