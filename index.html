@@ -1,103 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grace O’Hanlon Public Library</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<title>Grace O'Hanlon Public Library</title>
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  background: #0d0d0d;
+  color: #d6d6d6;
+  font-family: 'IBM Plex Mono', monospace;
+  margin: 0;
+}
+
+/* ---------- MU/TH/UR INTRO SCREEN ---------- */
+#intro-screen {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  color: #33ff66;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+  text-transform: uppercase;
+  z-index: 9999;
+  text-align: center;
+  line-height: 1.4;
+  letter-spacing: 1px;
+}
+
+#enter-btn {
+  margin-top: 28px;
+  border: 1px solid #33ff66;
+  padding: 6px 14px;
+  cursor: pointer;
+  background: transparent;
+  color: #33ff66;
+  font-size: 10px;
+}
+#enter-btn:hover {
+  background: #33ff66;
+  color: #000;
+}
+
+/* ---------- PAGE CONTENT ---------- */
+#site-content { display: none; }
+
+.content {
+  display: flex;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  gap: 50px;
+}
+
+/* Left column */
+.socials-column { width: 150px; }
+.socials-column h3 { font-size: 9px; margin-bottom: 8px; }
+.socials-column ul { list-style: none; padding: 0; }
+.socials-column li { margin-bottom: 6px; }
+.socials-column a { color: #d6d6d6; text-decoration: none; font-size: 9px; }
+.socials-column a:hover { text-decoration: underline; }
+
+/* Center typing */
+.main-column { flex: 1; max-width: 600px; }
+.title { font-size: 14px; margin-bottom: 14px; }
+
+#typed-text {
+  white-space: pre-wrap;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+/* Remove cursor line */
+#cursor { display: none; }
+
+/* Right column */
+.projects-column { width: 200px; }
+.projects-column h3 { font-size: 10px; margin-bottom: 8px; }
+.projects-column a { color: #d6d6d6; text-decoration: none; font-size: 10px; }
+.projects-column a:hover { text-decoration: underline; }
+.project-image { width: 100%; border-radius: 3px; margin-top: 10px; }
+</style>
 </head>
+
 <body>
-  <div class="content">
 
-    <!-- Left: Links -->
-    <div class="socials-column">
-      <h3>Socials</h3>
-      <ul>
-<li><a href="https://www.instagram.com/ohanlongrace/" target="_blank">Instagram</a></li>
-<li><a href="https://open.spotify.com/user/graceeohanlon" target="_blank">Spotify</a></li>
-<li><a href="https://www.clippings.me/users/graceohanlon" target="_blank">Clippings</a></li>
-<li><a href="https://www.linkedin.com/in/grace-o-hanlon-636694231/" target="_blank">LinkedIn</a></li>
-<li><a href="https://https://www.youtube.com/@graceohanlonpubliclibrary" target="_blank">YouTube</a></li>
-<li><a href="https://www.goodreads.com/user/show/153075111-grace-o-hanlon" target="_blank">Goodreads</a></li>
+<!-- MU/TH/UR INTRO -->
+<div id="intro-screen">
+  ** AR/CH/IVE 3000 MAINFRAME ONLINE **  
+  ACCESS LEVEL: VIEWER  
+  STATUS: STANDBY.
 
-<li><a href="https://letterboxd.com/ohanlongrace/" target="_blank">Letterboxd</a></li>
-
-<li><a href="fish.html">Click Here</a></li>
-
-      </ul>
-    </div>
-
-    <!-- Center: Main text -->
-    <div class="main-column">
-      <h1 class="title">Grace O’Hanlon Public Library</h1>
-
-      <p>
-     
-        Grace O’Hanlon is a poet, musician, artist, journalist, and extreme sports enthusiast from Boston, Massachusetts. Drawing inspiration from the natural world, her work weaves together themes of philosophical absurdism, climate activism, and the intersections of memory and resilience. She is currently pursuing a BA in Fashion Business Management with a minor in English at the Fashion Institute of Technology in New York City and spent a year of her studies at the Polimoda Institute in Florence, Italy.
-      </p>
-
-      <p>Her ongoing projects reflect her multidisciplinary approach. <em>Daughter of an Undertaker</em> is a poetry and photography collection, which navigates grief and childhood through surrealism. Grace is simultaneously developing a research thesis rooted in her family’s history in Vieques, Puerto Rico, examining climate displacement and infrastructural vulnerability in the wake of Hurricane Maria.</p>
- <h2>Education</h2>
-<p> BA: Fashion Institute of Technology, Major: Fashion Business Management; Concentration: Sustainable Materials, Minor: English, Writing 
-
-      <h2>Past Work</h2>
-      <p>Her past written work is featured in Gandy Dancer Literary Magazine (Porch Friendship), Clutch Magazine (A Letter to my Sister), W27 newspaper, PrimmaDonna Zine, and Blush Magazine (Power of Spoken Word) where she recently accepted a position as Senior Culture Editor.</p>
-
-      <p>In the summer of 2023, Grace interned in London at Waterstones, a book and publishing company, where she worked in event management and global marketing. She assisted in organizing the Edinburgh Literary Festival, and the release of <em>Into the Void: From Birth to Black Sabbath—And Beyond</em> by Geezer Butler and <em>Restaurant: A Story of Excellence</em> by Gordon Ramsay.</p>
-
-      <p>In her musical career, Grace attended Sharon Music Academy for six years and performed at Carnegie Hall three times, representing the United States of America at the Crescendo International Piano Competition, earning second place in 2021 and first place in both 2022 and 2023. She is currently learning the organ as a fifth instrument in her repertoire consisting also of piano, guitar, drums, and synthesizer. She has a strong interest in the intersection between electronic music and orchestral compositions.</p>
-
-      <p>Her interest in sustainable innovation has also shaped her biodesign practice. In 2023, her project <em>Mystical Mycelium</em>, a fully biodegradable mycelium-based toy prototype challenging the plastic toy industry, was exhibited at both the Museum of Modern Art and Parsons School of Design at the New York Biodesign Summit. Grace is a member of the Sustainability Council at FIT and participates in event organization and media alerts.</p>
-
-      <p>Grace has an obsession with the extreme sports industry. She is a marathon runner, snowboarder, surfer, cyclist, hiker and climber. She has a lifelong goal of summiting Jebel Toubkal in Morocco and visiting Nepal in the future. In her free time she eats burritos and curates monthly Spotify playlists.</p>
-    </div>
-
-<!-- Right: Projects -->
-<div class="projects-column">
-  <h3>Projects</h3>
-  <ul>
-    <li><a href="https://www.primadonnazine.com/digital/n6p5sli1sdexq3da7na7g2yqz5fufy" target="_blank">PrimaDonna Zine — Writer & Creative Director for Fresh Finds Campaign</a></li>
-    <li><a href="https://www.instagram.com/blushmagfit/?hl=en" target="_blank">Blush Magazine — Senior Culture Editor and Creative Lead</a></li>
-  </ul>
-
-  <!-- Blush Mag Shoot image -->
-  <a href="https://www.instagram.com/blushmagfit/?hl=en" target="_blank">
-    <img src="Blush Mag Shoot.jpg" alt="Blush Magazine Shoot" class="project-image">
-  </a>
-
-  <!-- Clutch Magazine image -->
-  <a href="https://www.instagram.com/clutch_magazine/?hl=en" target="_blank">
-    <img src="Clutch.jpg" alt="Clutch Magazine" class="project-image">
-  </a>
-
-  <!-- Blush Mag image -->
-  <a href="https://www.instagram.com/blushmagfit/?hl=en" target="_blank">
-    <img src="Blush Mag.jpg" alt="Blush Magazine" class="project-image">
-  </a>
-
- <!-- Gandy Dancer Literary Magazine -->
-<a href="https://www.gandydancer.org/13-2-poetry/grace-ohanlon/" target="_blank">
-  <img src="Gandydancer.jpg" class="project-image">
-</a>
-  <!-- Internships Section -->
-  <h3>Internships</h3>
-
-  <!-- Attersee Internship -->
-  <a href="https://shopattersee.com/?gad_source=1&gad_campaignid=21637296692&gbraid=0AAAAABRnaQjfH9vU-tXigeiwLQtO8rRYO&gclid=Cj0KCQjwmYzIBhC6ARIsAHA3IkRIHv6WLcbhW5nP8_1x_Mbm0QGTQSxWYivnSr1-LwBRD7KlKZuwJ6gaApnSEALw_wcB" target="_blank">
-    <img src="Attersee.jpg" alt="Attersee Internship" class="project-image">
-  </a>
-  <p>Fall 2025 — Creative Operations Intern, Attersee</p>
-
-  <!-- Cinq A Sept Internship -->
-  <a href="https://www.instagram.com/cinqasept/?hl=en" target="_blank">
-    <img src="cinqasept.jpg" alt="Cinqasept Internship" class="project-image">
-  </a>
-  <p>Summer 2025 — Public Relations Intern</p>
+  <button id="enter-btn">CLICK TO ENTER PUBLIC LIBRARY</button>
 </div>
 
+<!-- MAIN SITE -->
+<div id="site-content">
+<div class="content">
 
-
-
+  <!-- SOCIALS -->
+  <div class="socials-column">
+    <h3>Socials</h3>
+    <ul>
+      <li><a href="https://www.instagram.com/ohanlongrace/" target="_blank">Instagram</a></li>
+      <li><a href="https://open.spotify.com/user/graceeohanlon" target="_blank">Spotify</a></li>
+      <li><a href="https://www.clippings.me/users/graceohanlon" target="_blank">Clippings</a></li>
+      <li><a href="https://www.linkedin.com/in/grace-o-hanlon-636694231/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://www.youtube.com/@graceohanlonpubliclibrary" target="_blank">YouTube</a></li>
+      <li><a href="https://www.goodreads.com/user/show/153075111-grace-o-hanlon" target="_blank">Goodreads</a></li>
+      <li><a href="https://letterboxd.com/ohanlongrace/" target="_blank">Letterboxd</a></li>
+      <li><a href="fish.html">Click Here</a></li>
+    </ul>
   </div>
+
+  <!-- MAIN TEXT (typing) -->
+  <div class="main-column">
+    <h1 class="title">Grace O’Hanlon Public Library</h1>
+    <p id="typed-text"></p>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="projects-column">
+    <h3>Projects</h3>
+    <ul>
+      <li><a href="https://www.primadonnazine.com/digital/n6p5sli1sdexq3da7na7g2yqz5fufy" target="_blank">PrimaDonna Zine — Fresh Finds Campaign</a></li>
+      <li><a href="https://www.instagram.com/blushmagfit/?hl=en" target="_blank">Blush Magazine — Senior Culture Editor</a></li>
+    </ul>
+
+    <img src="Blush Mag Shoot.jpg" class="project-image">
+    <img src="Clutch.jpg" class="project-image">
+    <img src="Blush Mag.jpg" class="project-image">
+    <img src="Gandydancer.jpg" class="project-image">
+
+    <h3>Internships</h3>
+
+<a href="https://attersee.com" target="_blank">
+  <img src="Attersee.jpg" class="project-image">
+  <p>Fall 2025 — Creative Operations Intern, Attersee</p>
+</a>
+
+<a href="https://cinqasept.nyc/" target="_blank">
+  <img src="cinqasept.jpg" class="project-image">
+  <p>Summer 2025 — Public Relations Intern, Cinq à Sept</p>
+</a>
+
+
+</div>
+</div>
+
+<script>
+// Show site when clicking
+document.getElementById("enter-btn").addEventListener("click", () => {
+  document.getElementById("intro-screen").style.display = "none";
+  document.getElementById("site-content").style.display = "block";
+  startTyping();
+});
+
+// Typing text
+const text = `Grace O’Hanlon is a poet, musician, artist, journalist, and extreme sports enthusiast from Boston, Massachusetts. Drawing inspiration from the natural world, her work weaves together themes of philosophical absurdism, climate activism, and the intersections of memory and resilience. She is currently pursuing a BA in Fashion Business Management with a minor in English at the Fashion Institute of Technology in New York City and spent a year of her studies at the Polimoda Institute in Florence, Italy.
+
+Her projects reflect her multidisciplinary approach. Daughter of an Undertaker is a poetry and photography collection navigating grief and surreal memorywork. She is also developing research on her family’s history in Vieques, Puerto Rico and the climate vulnerability shaped by forced displacement.
+
+Her interest in sustainable innovation informs her biodesign work. Mystical Mycelium, a biodegradable toy prototype, was exhibited at MoMA and Parsons during the New York Biodesign Summit.
+
+She is a marathon runner, snowboarder, surfer, cyclist, hiker and climber. In her free time she eats burritos and curates monthly Spotify playlists.`;
+
+let i = 0;
+function startTyping() {
+  const speed = 22; // typing speed
+  const output = document.getElementById("typed-text");
+  
+  function type() {
+    if (i < text.length) {
+      output.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    }
+  }
+  type();
+}
+</script>
+
 </body>
 </html>
