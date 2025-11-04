@@ -156,37 +156,63 @@ body {
 </div>
 
 <script>
-// Show site when clicking
-document.getElementById("enter-btn").addEventListener("click", () => {
-  document.getElementById("intro-screen").style.display = "none";
-  document.getElementById("site-content").style.display = "block";
-  startTyping();
-});
-
-// Typing text
+// FULL ABOUT TEXT
 const text = `Grace O’Hanlon is a poet, musician, artist, journalist, and extreme sports enthusiast from Boston, Massachusetts. Drawing inspiration from the natural world, her work weaves together themes of philosophical absurdism, climate activism, and the intersections of memory and resilience. She is currently pursuing a BA in Fashion Business Management with a minor in English at the Fashion Institute of Technology in New York City and spent a year of her studies at the Polimoda Institute in Florence, Italy.
 
-Her projects reflect her multidisciplinary approach. Daughter of an Undertaker is a poetry and photography collection navigating grief and surreal memorywork. She is also developing research on her family’s history in Vieques, Puerto Rico and the climate vulnerability shaped by forced displacement.
+Her ongoing projects reflect her multidisciplinary approach. Daughter of an Undertaker is a poetry and photography collection, which navigates grief and childhood through surrealism. Grace is simultaneously developing a research thesis rooted in her family’s history in Vieques, Puerto Rico, examining climate displacement and infrastructural vulnerability in the wake of Hurricane Maria.
 
-Her interest in sustainable innovation informs her biodesign work. Mystical Mycelium, a biodegradable toy prototype, was exhibited at MoMA and Parsons during the New York Biodesign Summit.
+Education
+BA: Fashion Institute of Technology, Major: Fashion Business Management; Concentration: Sustainable Materials, Minor: English, Writing
 
-She is a marathon runner, snowboarder, surfer, cyclist, hiker and climber. In her free time she eats burritos and curates monthly Spotify playlists.`;
+Past Work
+Her past written work is featured in Gandy Dancer Literary Magazine (Porch Friendship), Clutch Magazine (A Letter to my Sister), W27 newspaper, PrimmaDonna Zine, and Blush Magazine (Power of Spoken Word) where she recently accepted a position as Senior Culture Editor.
 
-let i = 0;
+In the summer of 2023, Grace interned in London at Waterstones, a book and publishing company, where she worked in event management and global marketing. She assisted in organizing the Edinburgh Literary Festival, and the release of Into the Void: From Birth to Black Sabbath—And Beyond by Geezer Butler and Restaurant: A Story of Excellence by Gordon Ramsay.
+
+In her musical career, Grace attended Sharon Music Academy for six years and performed at Carnegie Hall three times, representing the United States of America at the Crescendo International Piano Competition, earning second place in 2021 and first place in both 2022 and 2023. She is currently learning the organ as a fifth instrument in her repertoire consisting also of piano, guitar, drums, and synthesizer. She has a strong interest in the intersection between electronic music and orchestral compositions.
+
+Her interest in sustainable innovation has also shaped her biodesign practice. In 2023, her project Mystical Mycelium, a fully biodegradable mycelium-based toy prototype challenging the plastic toy industry, was exhibited at both the Museum of Modern Art and Parsons School of Design at the New York Biodesign Summit. Grace is a member of the Sustainability Council at FIT and participates in event organization and media alerts.
+
+Grace has an obsession with the extreme sports industry. She is a marathon runner, snowboarder, surfer, cyclist, hiker and climber. She has a lifelong goal of summiting Jebel Toubkal in Morocco and visiting Nepal in the future. In her free time she eats burritos and curates monthly Spotify playlists.`;
+
+// Typing Animation
 function startTyping() {
-  const speed = 22; // typing speed
+  let i = 0;
+  const speed = 22;
   const output = document.getElementById("typed-text");
-  
+  const cursor = document.getElementById("cursor");
+
   function type() {
     if (i < text.length) {
       output.textContent += text.charAt(i);
       i++;
       setTimeout(type, speed);
+    } else {
+      cursor.style.display = "none";
     }
   }
   type();
 }
+
+// Check if intro skip param is present
+const params = new URLSearchParams(window.location.search);
+if (params.get("skipintro") === "true") {
+  document.getElementById("intro-screen").style.display = "none";
+  document.getElementById("site-content").style.display = "block";
+
+  // Show full text instantly (no typing)
+  document.getElementById("typed-text").textContent = text;
+  document.getElementById("cursor").style.display = "none";
+} else {
+  // Normal behavior with intro + typing
+  document.getElementById("enter-btn").addEventListener("click", () => {
+    document.getElementById("intro-screen").style.display = "none";
+    document.getElementById("site-content").style.display = "block";
+    startTyping();
+  });
+}
 </script>
+
 
 </body>
 </html>
