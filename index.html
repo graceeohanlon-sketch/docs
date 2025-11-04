@@ -5,15 +5,12 @@
 <title>Grace O'Hanlon Public Library</title>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-/* === PASTE YOUR CSS HERE === */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
-
 /* GLOBAL STYLE */
 body {
+  margin: 0;
   background: #0d0d0d;
   color: #d6d6d6;
   font-family: 'IBM Plex Mono', monospace;
-  margin: 0;
   font-size: 10px;
   letter-spacing: 0.3px;
 }
@@ -28,11 +25,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   font-size: 11px;
   text-transform: uppercase;
   z-index: 9999;
   line-height: 1.5;
-  text-align: center;
   letter-spacing: 1px;
 }
 
@@ -51,17 +48,17 @@ body {
   color: #000;
 }
 
-/* Show site only after click */
+/* SHOW SITE ONLY AFTER CLICK */
 #site-content { display: none; }
 
 /* MAIN PAGE LAYOUT */
 .content {
   display: flex;
-  flex-direction: row;
   max-width: 1100px;
   margin: 0 auto;
   padding: 60px 40px;
   gap: 50px;
+  flex-wrap: wrap;
 }
 
 /* LEFT COLUMN: SOCIALS */
@@ -72,11 +69,12 @@ body {
 .socials-column a { font-size: 9px; color: #d6d6d6; text-decoration: none; }
 .socials-column a:hover { text-decoration: underline; }
 
-/* CENTER COLUMN: MAIN TEXT */
+/* CENTER COLUMN: TYPING TEXT */
 .main-column { flex: 1; max-width: 600px; }
 .title { font-size: 14px; margin-bottom: 14px; }
 #typed-text { white-space: pre-wrap; font-size: 11px; line-height: 1.45; }
-#cursor { display: none; }
+#cursor { display: inline-block; color: #33ff66; font-size: 9px; animation: blink 0.7s steps(2) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
 
 /* RIGHT COLUMN: PROJECTS */
 .projects-column { width: 200px; flex-shrink: 0; }
@@ -122,27 +120,7 @@ body {
     <!-- CENTER COLUMN -->
     <div class="main-column">
       <h1 class="title">Grace O’Hanlon Public Library</h1>
-      <p id="typed-text">
-Grace O’Hanlon is a poet, musician, artist, journalist, and extreme sports enthusiast from Boston, Massachusetts. Drawing inspiration from the natural world, her work weaves together themes of philosophical absurdism, climate activism, and the intersections of memory and resilience. She is currently pursuing a BA in Fashion Business Management with a minor in English at the Fashion Institute of Technology in New York City and spent a year of her studies at the Polimoda Institute in Florence, Italy.
-
-Her ongoing projects reflect her multidisciplinary approach. Daughter of an Undertaker is a poetry and photography collection, which navigates grief and childhood through surrealism. Grace is simultaneously developing a research thesis rooted in her family’s history in Vieques, Puerto Rico, examining climate displacement and infrastructural vulnerability in the wake of Hurricane Maria.
-
-Education:
-BA: Fashion Institute of Technology, Major: Fashion Business Management; Concentration: Sustainable Materials; Minor: English, Writing
-
-Past Work:
-Her past written work is featured in Gandy Dancer Literary Magazine (Porch Friendship), Clutch Magazine (A Letter to my Sister), W27 newspaper, PrimmaDonna Zine, and Blush Magazine (Power of Spoken Word) where she recently accepted a position as Senior Culture Editor.
-
-In the summer of 2023, Grace interned in London at Waterstones, a book and publishing company, where she worked in event management and global marketing. She assisted in organizing the Edinburgh Literary Festival, and the release of Into the Void: From Birth to Black Sabbath—And Beyond by Geezer Butler and Restaurant: A Story of Excellence by Gordon Ramsay.
-
-In her musical career, Grace attended Sharon Music Academy for six years and performed at Carnegie Hall three times, representing the United States of America at the Crescendo International Piano Competition, earning second place in 2021 and first place in both 2022 and 2023. She is currently learning the organ as a fifth instrument in her repertoire consisting also of piano, guitar, drums, and synthesizer. She has a strong interest in the intersection between electronic music and orchestral compositions.
-
-Her interest in sustainable innovation has also shaped her biodesign practice. In 2023, her project Mystical Mycelium, a fully biodegradable mycelium-based toy prototype challenging the plastic toy industry, was exhibited at both the Museum of Modern Art and Parsons School of Design at the New York Biodesign Summit.
-
-Grace is a member of the Sustainability Council at FIT and participates in event organization and media alerts.
-
-Grace has an obsession with the extreme sports industry. She is a marathon runner, snowboarder, surfer, cyclist, hiker and climber. She has a lifelong goal of summiting Jebel Toubkal in Morocco and visiting Nepal in the future. In her free time she eats burritos and curates monthly Spotify playlists.
-      </p>
+      <p id="typed-text"><span id="cursor">|</span></p>
     </div>
 
     <!-- RIGHT COLUMN -->
@@ -152,16 +130,55 @@ Grace has an obsession with the extreme sports industry. She is a marathon runne
         <li><a href="https://www.primadonnazine.com/digital/n6p5sli1sdexq3da7na7g2yqz5fufy" target="_blank">PrimaDonna Zine — Fresh Finds Campaign</a></li>
         <li><a href="https://www.instagram.com/blushmagfit/?hl=en" target="_blank">Blush Magazine — Senior Culture Editor</a></li>
       </ul>
+
+      <a href="https://www.instagram.com/blushmagfit/?hl=en" target="_blank"><img src="Blush Mag Shoot.jpg" alt="Blush Magazine Shoot" class="project-image"></a>
+      <a href="https://www.instagram.com/clutch_magazine/?hl=en" target="_blank"><img src="Clutch.jpg" alt="Clutch Magazine" class="project-image"></a>
+      <a href="https://www.instagram.com/blushmagfit/?hl=en" target="_blank"><img src="Blush Mag.jpg" alt="Blush Magazine" class="project-image"></a>
+      <a href="https://www.gandydancer.org/13-2-poetry/grace-ohanlon/" target="_blank"><img src="Gandydancer.jpg" alt="Gandy Dancer" class="project-image"></a>
     </div>
 
   </div>
 </div>
 
 <script>
-// SHOW SITE ON BUTTON CLICK
-document.getElementById('enter-btn').addEventListener('click', () => {
-  document.getElementById('intro-screen').style.display = 'none';
-  document.getElementById('site-content').style.display = 'block';
+// FULL ABOUT TEXT
+const text = `Grace O’Hanlon is a poet, musician, artist, journalist, and extreme sports enthusiast from Boston, Massachusetts. Drawing inspiration from the natural world, her work weaves together themes of philosophical absurdism, climate activism, and the intersections of memory and resilience. She is currently pursuing a BA in Fashion Business Management with a minor in English at the Fashion Institute of Technology in New York City and spent a year of her studies at the Polimoda Institute in Florence, Italy.
+
+Her ongoing projects reflect her multidisciplinary approach. Daughter of an Undertaker is a poetry and photography collection, which navigates grief and childhood through surrealism. Grace is simultaneously developing a research thesis rooted in her family’s history in Vieques, Puerto Rico, examining climate displacement and infrastructural vulnerability in the wake of Hurricane Maria.
+
+Education:
+BA: Fashion Institute of Technology, Major: Fashion Business Management; Concentration: Sustainable Materials; Minor: English, Writing
+
+Past Work:
+Her past written work is featured in Gandy Dancer Literary Magazine, Clutch Magazine, W27 newspaper, PrimmaDonna Zine, and Blush Magazine (Power of Spoken Word) where she recently accepted a position as Senior Culture Editor.
+
+In the summer of 2023, Grace interned in London at Waterstones, a book and publishing company, where she worked in event management and global marketing. She assisted in organizing the Edinburgh Literary Festival, and the release of Into the Void: From Birth to Black Sabbath—And Beyond by Geezer Butler and Restaurant: A Story of Excellence by Gordon Ramsay.
+
+In her musical career, Grace attended Sharon Music Academy for six years and performed at Carnegie Hall three times, representing the United States of America at the Crescendo International Piano Competition, earning second place in 2021 and first place in both 2022 and 2023. She is currently learning the organ as a fifth instrument in her repertoire consisting also of piano, guitar, drums, and synthesizer. She has a strong interest in the intersection between electronic music and orchestral compositions.
+
+Her interest in sustainable innovation has also shaped her biodesign practice. In 2023, her project Mystical Mycelium, a fully biodegradable mycelium-based toy prototype challenging the plastic toy industry, was exhibited at both the Museum of Modern Art and Parsons School of Design at the New York Biodesign Summit.
+
+Grace is a member of the Sustainability Council at FIT and participates in event organization and media alerts.
+
+Grace has an obsession with the extreme sports industry. She is a marathon runner, snowboarder, surfer, cyclist, hiker and climber. She has a lifelong goal of summiting Jebel Toubkal in Morocco and visiting Nepal in the future. In her free time she eats burritos and curates monthly Spotify playlists.`;
+
+const typedText = document.getElementById("typed-text");
+const cursor = document.getElementById("cursor");
+let index = 0;
+
+function typeChar() {
+  if (index < text.length) {
+    typedText.insertBefore(document.createTextNode(text.charAt(index)), cursor);
+    index++;
+    setTimeout(typeChar, 5); // faster typing
+  }
+}
+
+// BUTTON CLICK SHOWS CONTENT
+document.getElementById("enter-btn").addEventListener("click", () => {
+  document.getElementById("intro-screen").style.display = "none";
+  document.getElementById("site-content").style.display = "block";
+  typeChar();
 });
 </script>
 
