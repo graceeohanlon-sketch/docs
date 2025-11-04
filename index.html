@@ -199,10 +199,9 @@ function type() {
   if (index < text.length) {
     typedText.textContent += text.charAt(index);
     index++;
-    setTimeout(type, 10);
-  } else {
-    cursor.style.display = "none";
-  }
+    setTimeout(type, 10); // typing speed
+  } 
+  // no else needed; cursor stays blinking after typing finishes
 }
 
 // Show content after intro
@@ -211,6 +210,7 @@ document.getElementById("enter-btn").addEventListener("click", () => {
   document.getElementById("site-content").style.display = "block";
   type();
 });
+
 </script>
 
 </body>
