@@ -3,19 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Grace O'Hanlon Public Library</title>
-
-<!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-
 <style>
+/* === PASTE YOUR CSS HERE === */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+/* GLOBAL STYLE */
 body {
-  margin: 0;
   background: #0d0d0d;
   color: #d6d6d6;
   font-family: 'IBM Plex Mono', monospace;
+  margin: 0;
+  font-size: 10px;
+  letter-spacing: 0.3px;
 }
 
-/* Intro screen */
+/* INTRO SCREEN */
 #intro-screen {
   position: fixed;
   inset: 0;
@@ -25,12 +28,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   font-size: 11px;
   text-transform: uppercase;
-  line-height: 1.4;
-  letter-spacing: 1px;
   z-index: 9999;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 1px;
 }
 
 #enter-btn {
@@ -42,51 +45,54 @@ body {
   color: #33ff66;
   font-size: 10px;
 }
+
 #enter-btn:hover {
   background: #33ff66;
   color: #000;
 }
 
-/* Page content */
-#site-content {
-  display: none;
-}
+/* Show site only after click */
+#site-content { display: none; }
 
+/* MAIN PAGE LAYOUT */
 .content {
   display: flex;
+  flex-direction: row;
   max-width: 1100px;
   margin: 0 auto;
   padding: 60px 40px;
   gap: 50px;
-  flex-wrap: wrap;
 }
 
-/* Left column */
-.socials-column { width: 150px; }
-.socials-column h3 { font-size: 9px; margin-bottom: 8px; }
-.socials-column ul { list-style: none; padding: 0; }
+/* LEFT COLUMN: SOCIALS */
+.socials-column { width: 150px; flex-shrink: 0; }
+.socials-column h3 { font-size: 9px; text-transform: uppercase; margin-bottom: 8px; }
+.socials-column ul { list-style: none; padding: 0; margin: 0; }
 .socials-column li { margin-bottom: 6px; }
-.socials-column a { color: #d6d6d6; text-decoration: none; font-size: 9px; }
+.socials-column a { font-size: 9px; color: #d6d6d6; text-decoration: none; }
 .socials-column a:hover { text-decoration: underline; }
 
-/* Center column */
-.main-column { flex: 1; min-width: 400px; }
+/* CENTER COLUMN: MAIN TEXT */
+.main-column { flex: 1; max-width: 600px; }
 .title { font-size: 14px; margin-bottom: 14px; }
-#typed-text { white-space: pre-wrap; font-size: 10px; line-height: 1.45; }
+#typed-text { white-space: pre-wrap; font-size: 11px; line-height: 1.45; }
+#cursor { display: none; }
 
-/* Right column */
-.projects-column { width: 200px; }
-.projects-column h3 { font-size: 10px; margin-bottom: 8px; }
-.projects-column a { color: #d6d6d6; text-decoration: none; font-size: 10px; }
+/* RIGHT COLUMN: PROJECTS */
+.projects-column { width: 200px; flex-shrink: 0; }
+.projects-column h3 { font-size: 10px; text-transform: uppercase; margin-bottom: 8px; }
+.projects-column ul { list-style: none; padding: 0; margin: 0; }
+.projects-column li { margin-bottom: 10px; }
+.projects-column a { font-size: 10px; color: #d6d6d6; text-decoration: none; }
 .projects-column a:hover { text-decoration: underline; }
-.project-image { width: 100%; border-radius: 3px; margin-top: 10px; }
+.project-image { width: 100%; border-radius: 3px; margin-top: 10px; object-fit: cover; }
 </style>
 </head>
 <body>
 
-<!-- Intro screen -->
+<!-- INTRO SCREEN -->
 <div id="intro-screen">
-  <div class="terminal">
+  <div>
     AR/CH/IVE_3000 // MAINFRAME ONLINE<br>
     ACCESS_LEVEL: VIEWER<br>
     SYSTEM_STATUS: STANDBY
@@ -94,11 +100,11 @@ body {
   <button id="enter-btn">CLICK TO ENTER PUBLIC LIBRARY</button>
 </div>
 
-<!-- Main site content -->
+<!-- MAIN SITE CONTENT -->
 <div id="site-content">
   <div class="content">
 
-    <!-- Socials -->
+    <!-- LEFT COLUMN -->
     <div class="socials-column">
       <h3>Socials</h3>
       <ul>
@@ -113,7 +119,7 @@ body {
       </ul>
     </div>
 
-    <!-- Main Column -->
+    <!-- CENTER COLUMN -->
     <div class="main-column">
       <h1 class="title">Grace O’Hanlon Public Library</h1>
       <p id="typed-text">
@@ -139,7 +145,7 @@ Grace has an obsession with the extreme sports industry. She is a marathon runne
       </p>
     </div>
 
-    <!-- Projects -->
+    <!-- RIGHT COLUMN -->
     <div class="projects-column">
       <h3>Projects</h3>
       <ul>
@@ -152,21 +158,10 @@ Grace has an obsession with the extreme sports industry. She is a marathon runne
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const enterBtn = document.getElementById("enter-btn");
-  const introScreen = document.getElementById("intro-screen");
-  const siteContent = document.getElementById("site-content");
-
-  if (!enterBtn || !introScreen || !siteContent) {
-    console.error("One or more required elements not found.");
-    return;
-  }
-
-  // Button click shows all content immediately
-  enterBtn.addEventListener("click", () => {
-    introScreen.style.display = "none";
-    siteContent.style.display = "block";
-  });
+// SHOW SITE ON BUTTON CLICK
+document.getElementById('enter-btn').addEventListener('click', () => {
+  document.getElementById('intro-screen').style.display = 'none';
+  document.getElementById('site-content').style.display = 'block';
 });
 </script>
 
