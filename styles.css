@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+body {
+  background: #0d0d0d;
+  color: #d6d6d6;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  gap: 40px;
+}
+
+/* Left column: Socials */
+.socials-column {
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.socials-column h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.socials-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.socials-column ul li {
+  margin-bottom: 8px;
+}
+
+.socials-column ul li a {
+  font-size: 12px;
+  color: #d6d6d6;
+  text-decoration: none;
+}
+
+.socials-column ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Center column: main text */
+.main-column {
+  flex: 1;
+  max-width: 650px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 45px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 18px;
+}
+
+/* Tiny inline portrait */
+.portrait {
+  width: 50px;
+  height: auto;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  vertical-align: middle;
+  border-radius: 2px;
+  filter: contrast(1.05) brightness(1.0);
+}
+
+/* Right column: Projects */
+.projects-column {
+  width: 180px;
+  flex-shrink: 0;
+}
+
+.projects-column h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.projects-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.projects-column ul li {
+  margin-bottom: 10px;
+}
+
+.projects-column ul li a {
+  font-size: 12px;
+  color: #d6d6d6;
+  text-decoration: none;
+}
+
+.projects-column ul li a:hover {
+  text-decoration: underline;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+
