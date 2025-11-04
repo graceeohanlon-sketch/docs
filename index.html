@@ -125,7 +125,7 @@ body {
   <!-- Main Column -->
   <div class="main-column">
     <h1 class="title">Grace O’Hanlon Public Library</h1>
-    <p id="typed-text"></p><span id="cursor">|</span>
+     <p id="typed-text"><span id="cursor">|</span></p>
   </div>
 
   <!-- Projects -->
@@ -199,7 +199,7 @@ function type() {
   if (index < text.length) {
     typedText.textContent += text.charAt(index);
     index++;
-    setTimeout(type, 20);
+    setTimeout(type, 10);
   } else {
     cursor.style.display = "none";
   }
