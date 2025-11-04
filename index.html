@@ -169,7 +169,17 @@ body {
 </div>
 
 <script>
-// FULL ABOUT TEXT
+document.addEventListener("DOMContentLoaded", () => {
+  const enterBtn = document.getElementById("enter-btn");
+  const introScreen = document.getElementById("intro-screen");
+  const siteContent = document.getElementById("site-content");
+  const typedText = document.getElementById("typed-text");
+  const cursor = document.getElementById("cursor");
+
+  if (!enterBtn || !introScreen || !siteContent || !typedText || !cursor) {
+    console.error("One or more required elements not found.");
+    return;
+  }
 const text = 'Grace O’Hanlon is a poet, musician, artist, journalist, and extreme sports enthusiast from Boston, Massachusetts. Drawing inspiration from the natural world, her work weaves together themes of philosophical absurdism, climate activism, and the intersections of memory and resilience. She is currently pursuing a BA in Fashion Business Management with a minor in English at the Fashion Institute of Technology in New York City and spent a year of her studies at the Polimoda Institute in Florence, Italy.
 
 Her ongoing projects reflect her multidisciplinary approach. Daughter of an Undertaker is a poetry and photography collection, which navigates grief and childhood through surrealism. Grace is simultaneously developing a research thesis rooted in her family’s history in Vieques, Puerto Rico, examining climate displacement and infrastructural vulnerability in the wake of Hurricane Maria.
@@ -190,27 +200,26 @@ Grace is a member of the Sustainability Council at FIT and participates in event
 
 Grace has an obsession with the extreme sports industry. She is a marathon runner, snowboarder, surfer, cyclist, hiker and climber. She has a lifelong goal of summiting Jebel Toubkal in Morocco and visiting Nepal in the future. In her free time she eats burritos and curates monthly Spotify playlists.`;
 
-// Typing effect
-const typedText = document.getElementById("typed-text");
-const cursor = document.getElementById("cursor");
-let index = 0;
+  let index = 0;
 
-function type() {
-  if (index < text.length) {
-    typedText.textContent += text.charAt(index);
-    index++;
-    setTimeout(type, 10); // typing speed
-  } 
-  // no else needed; cursor stays blinking after typing finishes
-}
+  function typeChar() {
+    if (index < text.length) {
+      // Insert before cursor so cursor remains visible
+      typedText.insertBefore(
+        document.createTextNode(text.charAt(index)),
+        cursor
+      );
+      index++;
+      setTimeout(typeChar, 10);
+    }
+  }
 
-// Show content after intro
-document.getElementById("enter-btn").addEventListener("click", () => {
-  document.getElementById("intro-screen").style.display = "none";
-  document.getElementById("site-content").style.display = "block";
-  type();
+  enterBtn.addEventListener("click", () => {
+    introScreen.style.display = "none";
+    siteContent.style.display = "block";
+    typeChar();
+  });
 });
-
 </script>
 
 </body>
