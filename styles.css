@@ -6,7 +6,7 @@ body {
   color: #d6d6d6;
   font-family: 'IBM Plex Mono', monospace;
   margin: 0;
-  font-size: 10px; /* make everything tiny */
+  font-size: 8px; /* make everything tiny */
   letter-spacing: 0.3px;
 }
 
