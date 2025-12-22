@@ -67,15 +67,52 @@ body {
 }
 
 /* LEFT COLUMN: Spaces */
-.spaces-column { width: 150px; flex-shrink: 0; }
-.spaces-column h3, .spaces-column ul, .spaces-column li, .spaces-column a {
+.spaces-column {
+  width: 150px;
+  flex-shrink: 0;
+}
+
+.spaces-column h3,
+.spaces-column ul,
+.spaces-column li,
+.spaces-column a {
   font-size: 12px;
   color: #89CFEF;
   text-decoration: none;
 }
-.spaces-column h3 { text-transform: uppercase; margin-bottom: 8px; }
-.spaces-column li { margin-bottom: 6px; }
-.spaces-column a:hover { text-decoration: underline; }
+
+.spaces-column h3 {
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.spaces-column ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+.spaces-column li {
+  margin-bottom: 6px;
+}
+
+.spaces-column a:hover {
+  text-decoration: underline;
+}
+
+.main-gif {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  display: block;
+  margin: 0 0 12px 0;
+  flex-shrink: 0;
+}
+
+.gif-item {
+  list-style: none;
+  padding-left: 0;
+}
+
 
 /* CENTER COLUMN: TYPING TEXT */
 .main-column { flex: 1; max-width: 600px; }
@@ -113,17 +150,26 @@ body {
 <div id="site-content">
   <div class="content">
 
-    <!-- LEFT COLUMN -->
-    <div class="spaces-column">
-      <h3>Spaces</h3>
-      <ul>
-        <li><a href="https://open.spotify.com/user/graceeohanlon" target="_blank">Monthly Playlists</a></li>
-        <li><a href="https://www.goodreads.com/user/show/153075111-grace-o-hanlon" target="_blank">What I'm Reading</a></li>
-        <li><a href="https://letterboxd.com/ohanlongrace/" target="_blank">What I'm Watching</a></li>
-        <li><a href="fish.html">Take a trip in my Fish Maze</a></li>
-        <li><a href="https://www.surf-forecast.com/weather_maps/Global-Atlantic" target="_blank">Global Surf Forecast</a></li>
-      </ul>
-    </div>
+   <!-- LEFT COLUMN -->
+<div class="spaces-column">
+  <h3>Spaces</h3>
+  <ul>
+    <li class="gif-item">
+      <img 
+        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDduOGJ2YjJmem52bzgyYXNsaWpoa2JsdWl0a2F2bjRtcTBwMWs5diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xX1dwuf8LN9YI/giphy.gif"
+        alt="Animated graphic"
+        class="main-gif"
+      />
+    </li>
+
+    <li><a href="https://open.spotify.com/user/graceeohanlon" target="_blank">Monthly Playlists</a></li>
+    <li><a href="https://www.goodreads.com/user/show/153075111-grace-o-hanlon" target="_blank">What I'm Reading</a></li>
+    <li><a href="https://letterboxd.com/ohanlongrace/" target="_blank">What I'm Watching</a></li>
+    <li><a href="fish.html">Take a trip in my Fish Maze</a></li>
+    <li><a href="https://www.surf-forecast.com/weather_maps/Global-Atlantic" target="_blank">Global Surf Forecast</a></li>
+  </ul>
+</div>
+
 
     <!-- CENTER COLUMN -->
     <div class="main-column">
