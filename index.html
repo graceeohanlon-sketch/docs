@@ -169,17 +169,18 @@ body {
 
 <script>
 // FULL ABOUT TEXT
-const text = `Grace O’Hanlon is a poet, musician, artist, journalist, and extreme sports enthusiast from Boston, Massachusetts. Drawing inspiration from the natural world, her work weaves together themes of philosophical absurdism, climate activism, and the intersections of memory and resilience. 
+const text = `
+This archive serves as a digital space to store memories and projects, past and current.
+Hello, my name is Grace O’Hanlon and I like to tell people that I am a poet, musician, and artist, but I like a lot of things. I am originally from Boston, Massachusetts and I just moved from NYC to Vermont. I will use this archive as a continued project drawing inspiration from the natural world, philosophical absurdism, climate activism, and journal entries. 
 
-Her ongoing projects reflect her multidisciplinary approach. Daughter of an Undertaker is a poetry and photography collection, which navigates grief and childhood through surrealism. Grace recently developed a research thesis rooted in her family’s history in Vieques, Puerto Rico, examining climate displacement and infrastructural vulnerability in the wake of Hurricane Maria. 
+I wrote one poetry collection titled Daughter of an Undertaker, which is linked on the side. The collection navigates grief and childhood through surrealism. I also developed a thesis rooted in my family’s history in Vieques, Puerto Rico, examining climate displacement and infrastructural vulnerability in the wake of Hurricane Maria. 
 
-In her musical career, Grace attended Sharon Music Academy for six years and performed at Carnegie Hall three times, representing the United States of America at the Crescendo International Piano Competition, earning second place in 2021 and first place in both 2022 and 2023. She is currently learning the organ as a fifth instrument in her repertoire consisting also of piano, guitar, drums, and synthesizer. She has a strong interest in the intersection between electronic music and orchestral compositions.
+I am currently learning the organ as my fifth instrument, so if anyone has any leads let me know. I also play piano, guitar, drums, and synthesizer. I am interested mostly in the intersection between alternative electronic music and orchestral compositions.
 
-Her interest in sustainable innovation has also shaped her biodesign practice. In 2023, her project Mystical Mycelium, a fully biodegradable mycelium-based toy prototype challenging the plastic toy industry, was exhibited at both the Museum of Modern Art and Parsons School of Design at the New York Biodesign Summit.
+In my free time I am a snowboarder, surfer, cyclist, hiker, and climber. I have a goal of summiting Jebel Toubkal in Morocco and visiting Nepal in the near future. I also love burritos and curating monthly Spotify playlists which you can find under the Spaces column. 
 
-Grace has an obsession with the extreme sports industry. She is a marathon runner, snowboarder, surfer, cyclist, hiker and climber. She has a lifelong goal of summiting Jebel Toubkal in Morocco and visiting Nepal in the future. In her free time she eats burritos and curates monthly Spotify playlists.
-
-This archive serves as a digital space to store memories and projects, past and current.`;
+If you ever want to get in touch, feel free to send me an <a href="mailto:graceeohanlon@gmail.com">email</a>.
+`;
 
 const typedText = document.getElementById("typed-text");
 const cursor = document.getElementById("cursor");
@@ -187,7 +188,8 @@ let index = 0;
 
 function typeChar() {
   if (index < text.length) {
-    typedText.insertBefore(document.createTextNode(text.charAt(index)), cursor);
+    // Insert HTML content properly to render links
+    typedText.innerHTML = text.slice(0, index + 1) + '<span id="cursor">|</span>';
     index++;
     setTimeout(typeChar, 5); // faster typing
   }
@@ -200,6 +202,3 @@ document.getElementById("enter-btn").addEventListener("click", () => {
   typeChar();
 });
 </script>
-
-</body>
-</html>
