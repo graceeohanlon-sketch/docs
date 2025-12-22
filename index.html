@@ -62,15 +62,15 @@ body {
   padding: 60px 40px;
   gap: 50px;
   flex-wrap: wrap;
-  color: #0E4C92;     
+  color: #89CFEF;     
   font-size: 9px;      
 }
 
 /* LEFT COLUMN: Spaces */
 .spaces-column { width: 150px; flex-shrink: 0; }
 .spaces-column h3, .spaces-column ul, .spaces-column li, .spaces-column a {
-  font-size: 9px;
-  color: #0E4C92;
+  font-size: 12px;
+  color: #89CFEF;
   text-decoration: none;
 }
 .spaces-column h3 { text-transform: uppercase; margin-bottom: 8px; }
@@ -79,16 +79,16 @@ body {
 
 /* CENTER COLUMN: TYPING TEXT */
 .main-column { flex: 1; max-width: 600px; }
-.title { font-size: 9px; margin-bottom: 14px; }
+.title { font-size: 12px; margin-bottom: 14px; }
 #typed-text { white-space: pre-wrap; font-size: 12px; line-height: 1.45; }
-#cursor { display: inline-block; color: #ffffff; font-size: 9px; animation: blink 0.9s steps(2) infinite; }
+#cursor { display: inline-block; color: #ffffff; font-size: 10px; animation: blink 0.9s steps(2) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
 /* RIGHT COLUMN: Projects */
 .projects-column { width: 200px; flex-shrink: 0; }
 .projects-column h3, .projects-column ul, .projects-column li, .projects-column a {
   font-size: 9px;
-  color: #ffffff;
+  color: #89CFEF;
   text-decoration: none;
 }
 .projects-column h3 { text-transform: uppercase; margin-bottom: 8px; }
@@ -168,7 +168,7 @@ function typeChar() {
   if (index < text.length) {
     typedText.innerHTML = text.slice(0, index + 1) + '<span id="cursor">|</span>';
     index++;
-    setTimeout(typeChar, 8); 
+    setTimeout(typeChar, 6); 
   }
 }
 document.getElementById("enter-btn").addEventListener("click", () => {
