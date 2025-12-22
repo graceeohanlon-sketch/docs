@@ -3,11 +3,16 @@
 /* GLOBAL STYLE */
 body {
   background: #0d0d0d;
-  color: #d6d6d6;
+  color: #ffffff; /* ALL TEXT WHITE */
   font-family: 'IBM Plex Mono', monospace;
   margin: 0;
-  font-size: 8px; /* make everything tiny */
+  font-size: 8px;
   letter-spacing: 0.3px;
+}
+
+/* Force everything inside body to be white */
+body * {
+  color: #ffffff;
 }
 
 /* --------------------- INTRO TERMINAL SCREEN --------------------- */
@@ -15,8 +20,8 @@ body {
 #intro-screen {
   position: fixed;
   inset: 0;
-  background: #000;
-  color: #33ff66;
+  background: #0047ff; /* BLUE TITLE SCREEN */
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,17 +36,17 @@ body {
 
 #enter-btn {
   margin-top: 28px;
-  border: 1px solid #33ff66;
+  border: 1px solid #ffffff;
   padding: 6px 14px;
   cursor: pointer;
   background: transparent;
-  color: #33ff66;
+  color: #ffffff;
   font-size: 10px;
 }
 
 #enter-btn:hover {
-  background: #33ff66;
-  color: #000;
+  background: #ffffff;
+  color: #0047ff;
 }
 
 /* Show site only after click */
@@ -58,6 +63,7 @@ body {
   margin: 0 auto;
   padding: 60px 40px;
   gap: 50px;
+  position: relative;
 }
 
 /* --------------------- LEFT COLUMN: SOCIALS --------------------- */
@@ -85,8 +91,10 @@ body {
 
 .socials-column a {
   font-size: 7px;
-  color: #d6d6d6;
   text-decoration: none;
+  position: relative;
+  z-index: 10;            /* FIX CLICK ISSUE */
+  pointer-events: auto;   /* ENSURE CLICKABLE */
 }
 
 .socials-column a:hover {
@@ -141,8 +149,10 @@ body {
 
 .projects-column a {
   font-size: 7px;
-  color: #d6d6d6;
   text-decoration: none;
+  position: relative;
+  z-index: 10;            /* FIX CLICK ISSUE */
+  pointer-events: auto;
 }
 
 .projects-column a:hover {
@@ -155,6 +165,3 @@ body {
   margin-top: 10px;
   object-fit: cover;
 }
-
-
-
