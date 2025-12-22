@@ -10,11 +10,6 @@ body {
   letter-spacing: 0.3px;
 }
 
-/* Force everything inside body to be white */
-body * {
-  color: #ffffff;
-}
-
 /* --------------------- INTRO TERMINAL SCREEN --------------------- */
 
 #intro-screen {
