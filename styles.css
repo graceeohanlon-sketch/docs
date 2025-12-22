@@ -4,7 +4,7 @@ body {
   background: #0d0d0d;
   color: #ffffff;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 11px;
+  font-size: 9px;
   letter-spacing: 0.1px;
 }
 
@@ -21,7 +21,7 @@ body {
   position: fixed;
   inset: 0;
   background: #0047ff; /* BLUE TITLE SCREEN */
-  color: #2832c2;
+  color: #0E4C92; /* updated text color */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,22 +33,21 @@ body {
   text-align: center;
   letter-spacing: 1px;
 }
-
 #enter-btn {
   margin-top: 28px;
-  border: 1px solid #ffffff;
+  border: 1px solid #0E4C92; /* matches intro text */
   padding: 6px 14px;
   cursor: pointer;
   background: transparent;
-  color: #ffffff;
+  color: #0E4C92; /* matches intro text */
   font-size: 10px;
+  transition: all 0.3s ease;
 }
 
 #enter-btn:hover {
-  background: #ffffff;
-  color: #0047ff;
+  background: #0E4C92; /* fill button with text color */
+  color: #ffffff; /* text becomes white for contrast */
 }
-
 /* Show site only after click */
 #site-content {
   display: none;
