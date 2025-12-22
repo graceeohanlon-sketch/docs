@@ -12,43 +12,40 @@ body {
   background: #0d0d0d;
   color: #d6d6d6;
   font-family: "Times New Roman", Times, serif;
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 0.1px;
 }
-
-/* INTRO SCREEN */
-#intro-screen {
+  #intro-screen {
   position: fixed;
   inset: 0;
-  background: #000;
-  color: #33ff66;
+  background: #0047ff; /* BLUE TITLE SCREEN */
+  color: #0E4C92; /* updated text color */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   font-size: 11px;
   text-transform: uppercase;
   z-index: 9999;
   line-height: 1.5;
+  text-align: center;
   letter-spacing: 1px;
 }
-
-#enter-btn {
+  #enter-btn {
   margin-top: 28px;
-  border: 1px solid #33ff66;
+  border: 1px solid #0E4C92; /* matches intro text */
   padding: 6px 14px;
   cursor: pointer;
   background: transparent;
-  color: #33ff66;
+  color: #0E4C92; /* matches intro text */
   font-size: 10px;
+  transition: all 0.3s ease;
 }
 
 #enter-btn:hover {
-  background: #33ff66;
-  color: #000;
+  background: #0E4C92; /* fill button with text color */
+  color: #ffffff; /* text becomes white for contrast */
 }
-
 /* SHOW SITE ONLY AFTER CLICK */
 #site-content { display: none; }
 
