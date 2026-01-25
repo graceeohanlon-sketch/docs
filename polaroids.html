@@ -1,20 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Polaroids</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 20px;
-      background: #0d0d0d;
-      color: #d6d6d6;
-      font-family: sans-serif;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Polaroids</title>
+
+<style>
+  body {
+    margin: 0;
+    padding: 30px;
+    background: #0d0d0d;
+    color: #d6d6d6;
+    font-family: "IBM Plex Mono", monospace;
+    overflow-y: scroll;
+  }
+
+  h1 {
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .polaroid {
+    width: 320px;
+    background: #fff;
+    padding: 12px 12px 35px 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    margin: 0 auto;
+    border-radius: 3px;
+    transform: rotate(-1deg);
+  }
+
+  .polaroid:nth-child(even) {
+    transform: rotate(1.2deg);
+  }
+
+  .polaroid img {
+    width: 100%;
+    display: block;
+  }
+
+  .caption {
+    font-size: 10px;
+    color: #333;
+    text-align: center;
+    margin-top: 8px;
+    letter-spacing: 0.4px;
+  }
+</style>
 </head>
+
 <body>
-  <h2>Polaroids</h2>
-  <p>Images coming soon...</p>
+  <h1>Polaroids</h1>
+
+  <div class="gallery">
+
+    <!-- ADD IMAGES HERE -->
+    <div class="polaroid">
+      <img src="polaroids/img1.jpg" alt="Polaroid">
+      <div class="caption">Caption 1</div>
+    </div>
+
+    <div class="polaroid">
+      <img src="polaroids/img2.jpg" alt="Polaroid">
+      <div class="caption">Caption 2</div>
+    </div>
+
+    <div class="polaroid">
+      <img src="polaroids/img3.jpg" alt="Polaroid">
+      <div class="caption">Caption 3</div>
+    </div>
+
+    <!-- Add more by copy/pasting -->
+
+  </div>
 </body>
 </html>
+
