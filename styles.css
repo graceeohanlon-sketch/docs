@@ -20,7 +20,7 @@ body {
   position: fixed;
   inset: 0;
   background: #0d0d0d; /* black background */
-  color: #0E4C92; /* blue text */
+  color: #39b35e; /* green ass text */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,13 +39,13 @@ body {
   padding: 6px 14px;
   cursor: pointer;
   background: transparent;
-  color: #0E4C92; /* matches intro text */
+  color: #39b35e; /* matches intro text */
   font-size: 10px;
   transition: all 0.3s ease;
 }
 
 #enter-btn:hover {
-  background: #0E4C92; /* fill button with text color */
+  background: #39b35e; /* fill button with text color */
   color: #ffffff; /* text becomes white for contrast */
 }
 /* Show site only after click */
